@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📘 Manuel de l'Expert : La Tectonique des Plaques</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .chapter {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chapter:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chapter-title {
+            font-size: 2.2em;
+            color: #764ba2;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chapter-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #667eea;
+            margin: 25px 0 15px 0;
+            padding-left: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .definition-box {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3e7ff 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .definition-box strong {
+            color: #764ba2;
+            font-size: 1.2em;
+        }
+
+        .scenario {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe7e7 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 3px solid #ff6b6b;
+        }
+
+        .scenario h4 {
+            color: #ff6b6b;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .evidence {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ffc107;
+        }
+
+        .evidence strong {
+            color: #f57c00;
+        }
+
+        .risk-formula {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 25px 0;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .summary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .summary ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .summary li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .summary li:before {
+            content: "⭐";
+            position: absolute;
+            left: 0;
+        }
+
+        .quiz-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .quiz-title {
+            font-size: 2.5em;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-level {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .level-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question strong {
+            color: #764ba2;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .options {
+            margin-left: 0px;
+            margin-top: 15px;
+        }
+
+        .option-item {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+        }
+
+        .option-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+
+        .option-item label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 1.05em;
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .text-input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .check-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .check-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .check-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+            display: block;
+        }
+
+        .answers {
+            background: #e8f5e9;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 3px solid #4caf50;
+        }
+
+        .answers h3 {
+            color: #2e7d32;
+            border-left-color: #4caf50;
+        }
+
+        .answer-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .results {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .results h3 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .result-level {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 2em;
+            font-weight: bold;
+            display: none;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.5);
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .emoji-large {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .tip-box strong {
+            color: #f57c00;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .chapter {
+                padding: 25px;
+            }
+
+            .chapter-title {
+                font-size: 1.6em;
+            }
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3e7ff 100%);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            border: 3px dashed #667eea;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .protection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .protection-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .protection-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .show-answers-btn {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+            transition: all 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .show-answers-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📘 MANUEL DE L'EXPERT</h1>
+            <div class="subtitle">LA TECTONIQUE DES PLAQUES</div>
+            <div class="subtitle" style="margin-top: 10px; font-style: italic;">Version Illustrée pour Révision</div>
+        </header>
+
+        <!-- CHAPITRE 1 -->
+        <div class="chapter">
+            <div class="chapter-title">
+                <div class="chapter-number">1</div>
+                <span>🕵️‍♂️ L'ENQUÊTE - Comment le sait-on ?</span>
+            </div>
+
+            <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">
+                Avant, on pensait que la Terre était figée. Deux preuves majeures ont tout changé.
+            </p>
+
+            <h3>1. La théorie d'Alfred Wegener (1912)</h3>
+            <p>Il affirme que les continents dérivent car :</p>
+
+            <div class="evidence">
+                <strong>🧩 Le Puzzle :</strong> La forme des continents (ex: Afrique et Amérique du Sud) s'emboîte parfaitement.
+            </div>
+
+            <div class="image-placeholder">
+                <img src="unnamed1.jpg" alt="Dérive des continents, de la Pangée au monde moderne.">
+            </div>
+
+            <div class="evidence">
+                <strong>🦖 Les Fossiles :</strong> On retrouve les mêmes fossiles d'animaux et de plantes de part et d'autre de l'océan.
+            </div>
+
+            <h3>2. La preuve moderne : Le GPS 📡</h3>
+            <p>Aujourd'hui, les satellites mesurent les mouvements au millimètre près !</p>
+            <ul>
+                <li><strong>Écartement (+2,4 cm/an) :</strong> Entre Montréal et La Rochelle.</li>
+                <li><strong>Rapprochement (-7,2 cm/an) :</strong> Entre Nouméa et Tahiti.</li>
+            </ul>
+
+            
+        </div>
+
+        <!-- CHAPITRE 2 -->
+        <div class="chapter">
+            <div class="chapter-title">
+                <div class="chapter-number">2</div>
+                <span>🏗️ LA STRUCTURE - Le "Sandwich" Terrestre</span>
+            </div>
+
+            <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">
+                La Terre est découpée en plaques. Voici les définitions exactes à connaître :
+            </p>
+
+            <div class="definition-box">
+                <strong>🟦 LITHOSPHÈRE (La Plaque)</strong><br>
+                C'est la couche de surface, rigide et cassante. Elle fait environ 100 km d'épaisseur sous les océans et 150 km sous les continents.
+            </div>
+
+            <div class="definition-box">
+                <strong>🔥 ASTHÉNOSPHÈRE (Le support)</strong><br>
+                C'est la couche située juste en dessous. Elle est composée de roches moins rigides (ductiles) et plus chaudes.
+            </div>
+
+            <div class="image-placeholder">
+                <img src="unnamed2.jpg" alt="Schéma des couches internes de la Terre : lithosphère, asthénosphère, manteau et noyau.">
+            </div>
+
+            <div class="tip-box">
+                <strong>🧠 L'astuce de l'expert :</strong> Comment connait-on l'épaisseur ? Grâce aux ondes sismiques.
+                <ul>
+                    <li>Elles vont <strong>VITE</strong> dans le dur (Lithosphère).</li>
+                    <li>Elles <strong>RALENTISSENT</strong> dans le mou (Asthénosphère).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CHAPITRE 3 -->
+        <div class="chapter">
+            <div class="chapter-title">
+                <div class="chapter-number">3</div>
+                <span>🔥 LE MOTEUR - Pourquoi ça bouge ?</span>
+            </div>
+
+            <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">
+                Pourquoi ces immenses plaques se déplacent-elles ?
+            </p>
+
+            <div class="definition-box">
+                <strong>La Cause :</strong> La Terre produit de la chaleur interne.
+            </div>
+
+            <div class="definition-box">
+                <strong>L'Origine :</strong> Cette chaleur vient de la désintégration d'éléments radioactifs (comme l'Uranium) contenus dans les roches profondes.
+            </div>
+
+            <div class="definition-box">
+                <strong>L'Effet :</strong> Pour évacuer cette chaleur, la matière bouge en profondeur (convection), ce qui entraîne le déplacement des plaques en surface.
+            </div>
+
+            <div class="image-placeholder">
+                <img src="unnamed3.jpg" alt="Courants de convection dans le manteau terrestre et déplacement des plaques.">
+            </div>
+        </div>
+
+        <!-- CHAPITRE 4 -->
+        <div class="chapter">
+            <div class="chapter-title">
+                <div class="chapter-number">4</div>
+                <span>🎬 L'ACTION - Les 2 Mouvements</span>
+            </div>
+
+            <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">
+                Tout se passe aux frontières des plaques. Il n'y a que deux scénarios possibles :
+            </p>
+
+            <div class="scenario">
+                <h4>SCÉNARIO A : DIVERGENCE (Les plaques s'écartent) ⬅️ 🌊 ➡️</h4>
+                <ul>
+                    <li><strong>Lieu :</strong> Les Dorsales Océaniques.</li>
+                    <li><strong>Mécanisme :</strong> Les plaques s'éloignent. Du magma remonte pour combler le vide.</li>
+                    <li><strong>Résultat :</strong> Création de basalte (nouvelle lithosphère) → L'océan s'agrandit.</li>
+                    <li><strong>Risques :</strong> Volcans effusifs (lave fluide) et séismes superficiels.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="unnamed4.jpg" alt="Les trois types de frontières de plaques, dont la dorsale océanique divergente.">
+                </div>
+            </div>
+
+            <div class="scenario">
+                <h4>SCÉNARIO B : CONVERGENCE (Les plaques se rapprochent) ➡️ 💥 ⬅️</h4>
+                <p style="margin-top: 15px;">Ici, deux fins sont possibles :</p>
+
+                <h4 style="margin-top: 25px; color: #ff6b6b;">1. La SUBDUCTION (Océan contre Continent)</h4>
+                <div class="definition-box" style="margin-top: 15px;">
+                    <strong>Définition :</strong> "Enfouissement dans l'asthénosphère" de la plaque océanique sous la continentale. Cela "provoque la fermeture de l'océan".
+                </div>
+
+                <div class="evidence" style="margin-top: 15px;">
+                    <strong>La Preuve Visuelle :</strong> Les foyers des séismes sont alignés selon un plan oblique (en diagonale) qui descend jusqu'à 600 km de profondeur.
+                </div>
+
+                <p><strong>Risques :</strong> Fosses océaniques, séismes profonds et volcans explosifs.</p>
+
+                <div class="image-placeholder">
+                    <img src="unnamed5.jpg" alt="Coupe de subduction avec plaque océanique plongeant sous la plaque continentale.">
+                </div>
+
+                <h4 style="margin-top: 30px; color: #ff6b6b;">2. La COLLISION (Continent contre Continent)</h4>
+                <p style="margin-top: 15px;">Deux continents se rencontrent. Les roches se plissent.</p>
+                <p><strong>Résultat :</strong> Formation de chaînes de montagnes (ex: Himalaya).</p>
+
+                <div class="image-placeholder">
+                    <img src="unnamed6.jpg" alt="Chaîne de montagnes formée par la collision de deux continents.">
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAPITRE 5 -->
+        <div class="chapter">
+            <div class="chapter-title">
+                <div class="chapter-number">5</div>
+                <span>⚠️ LES RISQUES & LA PROTECTION</span>
+            </div>
+
+            <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">
+                L'Homme ne peut pas empêcher la Terre de bouger, mais il peut gérer le risque.
+            </p>
+
+            <div class="risk-formula">
+                Risque = Aléa × Enjeu
+            </div>
+
+            <div class="definition-box">
+                <strong>Aléa :</strong> L'éventualité qu'un phénomène dangereux survienne (séisme, volcan).
+            </div>
+
+            <div class="definition-box">
+                <strong>Enjeu :</strong> Ce qui est menacé (les hommes, les biens).
+            </div>
+
+            <h3>🛡️ Comment se protéger ? (Moyens de prévention)</h3>
+
+            <div class="protection-grid">
+                <div class="protection-card">
+                    <h4>🔮 La Prévision</h4>
+                    <p>Surveiller les volcans (facile) et tenter de prévoir les séismes (très difficile).</p>
+                </div>
+
+                <div class="protection-card">
+                    <h4>🏗️ L'Aménagement</h4>
+                    <p>Construire des bâtiments parasismiques.</p>
+                </div>
+
+                <div class="protection-card">
+                    <h4>📚 L'Information</h4>
+                    <p>Éduquer les populations aux gestes de sécurité.</p>
+                </div>
+            </div>
+
+            <div class="image-placeholder">
+                <img src="unnamed7.jpg" alt="Bâtiments résistants aux séismes grâce à différents dispositifs parasismiques.">
+            </div>
+        </div>
+
+        <!-- RÉSUMÉ FINAL -->
+        <div class="summary">
+            <h2>⭐ LE RÉSUMÉ FINAL (À retenir absolument)</h2>
+            <ul>
+                <li>La Terre est un puzzle de 12 plaques (lithosphère rigide) qui flottent sur l'asthénosphère (molle).</li>
+                <li>Elles bougent à cause de la chaleur de la radioactivité.</li>
+                <li>Dorsale = Écartement = Création d'océan (Volcanisme calme).</li>
+                <li>Fosse = Rapprochement (Subduction) = Destruction de plaque (Volcanisme explosif).</li>
+                <li>On prouve la subduction car les séismes sont alignés en diagonale sous le continent.</li>
+            </ul>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="quiz-section">
+            <div class="quiz-title">🎯 QUIZ FINAL : DEVIENS UN EXPERT TECTONIQUE</div>
+
+            <div class="quiz-level" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                <div class="level-title">🟢 NIVEAU 1 : LES BASES (Vocabulaire)</div>
+
+                <div class="question">
+                    <strong>1. De quoi est composée une plaque tectonique ?</strong>
+                    <div class="options">
+                        <div class="option-item">
+                            <input type="radio" name="q1" id="q1a" value="A">
+                            <label for="q1a">A. De magma liquide.</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="q1" id="q1b" value="B">
+                            <label for="q1b">B. De lithosphère (roche rigide).</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="q1" id="q1c" value="C">
+                            <label for="q1c">C. D'asthénosphère (roche molle).</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback-q1"></div>
+                </div>
+
+                <div class="question">
+                    <strong>2. Comment appelle-t-on la couche située juste en dessous des plaques, sur laquelle elles "flottent" ?</strong>
+                    <div class="options">
+                        <input type="text" class="text-input" id="q2" placeholder="Réponse attendue : L'asthe...">
+                    </div>
+                    <div class="feedback" id="feedback-q2"></div>
+                </div>
+
+                <div class="question">
+                    <strong>3. Complète cette phrase du cours :</strong>
+                    <p style="margin: 10px 0; font-style: italic;">"Les ondes sismiques vont vite dans la lithosphère car elle est rigide, mais elles ............... quand elles entrent dans l'asthénosphère."</p>
+                    <div class="options">
+                        <input type="text" class="text-input" id="q3" placeholder="Entrez votre réponse">
+                    </div>
+                    <div class="feedback" id="feedback-q3"></div>
+                </div>
+            </div>
+
+            <div class="quiz-level" style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);">
+                <div class="level-title">🟡 NIVEAU 2 : LE MÉCANISME (Compréhension)</div>
+
+                <div class="question">
+                    <strong>4. Quel est le "moteur" des plaques ? (D'où vient la chaleur ?)</strong>
+                    <div class="options">
+                        <div class="option-item">
+                            <input type="radio" name="q4" id="q4a" value="A">
+                            <label for="q4a">A. Le noyau en feu.</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="q4" id="q4b" value="B">
+                            <label for="q4b">B. Le soleil qui chauffe le sol.</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="q4" id="q4c" value="C">
+                            <label for="q4c">C. La radioactivité des roches (Uranium).</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback-q4"></div>
+                </div>
+
+                <div class="question">
+                    <strong>5. Au niveau d'une DORSALE océanique :</strong>
+                    <p style="margin: 10px 0;">- Les plaques s'écartent-elles ou se rapprochent-elles ?</p>
+                    <p style="margin: 10px 0;">- Est-ce que l'océan s'agrandit ou rétrécit ?</p>
+                    <div class="options">
+                        <input type="text" class="text-input" id="q5" placeholder="Entrez votre réponse complète">
+                    </div>
+                    <div class="feedback" id="feedback-q5"></div>
+                </div>
+
+                <div class="question">
+                    <strong>6. C'est quoi la "Subduction" ? (Choisis la meilleure définition)</strong>
+                    <div class="options">
+                        <div class="option-item">
+                            <input type="radio" name="q6" id="q6a" value="A">
+                            <label for="q6a">A. Deux continents qui se rentrent dedans.</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="q6" id="q6b" value="B">
+                            <label for="q6b">B. Une plaque océanique qui plonge sous une plaque continentale.</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" name="q6" id="q6c" value="C">
+                            <label for="q6c">C. Un volcan qui s'éteint.</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback-q6"></div>
+                </div>
+            </div>
+
+            <div class="quiz-level" style="background: linear-gradient(135deg, #ff7979 0%, #ff6b6b 100%); color: white;">
+                <div class="level-title" style="color: white;">🔴 NIVEAU 3 : L'EXPERTISE (Détails du cahier)</div>
+
+                <div class="question">
+                    <strong>7. La Preuve par l'alignement : Dans une zone de subduction, comment sont répartis les foyers des séismes en profondeur ?</strong>
+                    <p style="margin: 10px 0; font-style: italic;">(Indice : C'est la preuve que la plaque descend).</p>
+                    <div class="options">
+                        <input type="text" class="text-input" id="q7" placeholder="Entrez votre réponse">
+                    </div>
+                    <div class="feedback" id="feedback-q7"></div>
+                </div>
+
+                <div class="question">
+                    <strong>8. La Collision : Quand deux continents se rencontrent (comme pour l'Himalaya), qu'est-ce que cela forme comme relief ?</strong>
+                    <div class="options">
+                        <input type="text" class="text-input" id="q8" placeholder="Entrez votre réponse">
+                    </div>
+                    <div class="feedback" id="feedback-q8"></div>
+                </div>
+
+                <div class="question">
+                    <strong>9. Le Risque Géologique : Quelle est la formule magique du risque ?</strong>
+                    <p style="margin: 10px 0; font-style: italic;">Risque = ............... x ...............</p>
+                    <div class="options">
+                        <input type="text" class="text-input" id="q9" placeholder="Entrez votre réponse (format: X x Y)">
+                    </div>
+                    <div class="feedback" id="feedback-q9"></div>
+                </div>
+
+                <div class="question">
+                    <strong>10. Question Bonus (Mémoire) : D'après les mesures GPS du cours, est-ce que Montréal et La Rochelle s'éloignent ou se rapprochent ?</strong>
+                    <div class="options">
+                        <input type="text" class="text-input" id="q10" placeholder="Entrez votre réponse">
+                    </div>
+                    <div class="feedback" id="feedback-q10"></div>
+                </div>
+            </div>
+
+            <button class="check-btn" onclick="checkAnswers()">✅ Vérifier mes réponses</button>
+
+            <div class="score-display" id="scoreDisplay"></div>
+
+            <!-- RÉPONSES (corrigé caché par défaut) -->
+            <details class="answers">
+                <summary style="cursor: pointer; font-weight: 600;">🗝️ Afficher / masquer le corrigé</summary>
+                <div style="margin-top: 15px;">
+                    <div class="answer-item"><strong>1.</strong> B. De lithosphère (roche rigide).</div>
+                    <div class="answer-item"><strong>2.</strong> L'Asthénosphère.</div>
+                    <div class="answer-item"><strong>3.</strong> Elles ralentissent.</div>
+                    <div class="answer-item"><strong>4.</strong> C. La radioactivité.</div>
+                    <div class="answer-item"><strong>5.</strong> Elles s'écartent (Divergence) et l'océan s'agrandit.</div>
+                    <div class="answer-item"><strong>6.</strong> B. Une plaque qui plonge sous une autre.</div>
+                    <div class="answer-item"><strong>7.</strong> Ils sont alignés selon un plan oblique (en diagonale) qui descend jusqu'à 600km.</div>
+                    <div class="answer-item"><strong>8.</strong> Des chaînes de montagnes.</div>
+                    <div class="answer-item"><strong>9.</strong> Risque = Aléa x Enjeu.</div>
+                    <div class="answer-item"><strong>10.</strong> Elles s'éloignent (de 2,4 cm/an).</div>
+                </div>
+            </details>
+
+            <!-- RÉSULTATS -->
+            <div class="results">
+                <h3>🏆 RÉSULTATS</h3>
+                <div class="result-level">
+                    <strong>10/10 :</strong> 🥇 Expert Tectonique ! (Prêt pour le 20/20).
+                </div>
+                <div class="result-level">
+                    <strong>7/10 à 9/10 :</strong> 🥈 Géologue Confirmé. (Relire juste les erreurs).
+                </div>
+                <div class="result-level">
+                    <strong>Moins de 7/10 :</strong> 🥉 Apprenti. (Il faut relire le "Manuel de l'Expert" une fois de plus).
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 40px; color: white; font-size: 1.1em;">
+            <p>✨ Voulez-vous que je développe un point précis si vous butez sur une question ? ✨</p>
+        </div>
+    </div>
+
+    <script>
+        // Réponses correctes (utilisées uniquement pour la correction automatique)
+        const correctAnswers = {
+            q1: "B",
+            q2: ["asthénosphère", "asthenosphere", "l'asthénosphère"],
+            q3: ["ralentissent", "ralentisse"],
+            q4: "C",
+            q5: ["écartent", "s'écartent", "agrandit", "divergence"],
+            q6: "B",
+            q7: ["oblique", "diagonale", "alignés", "plan oblique", "plan incliné"],
+            q8: ["montagne", "montagnes", "chaîne", "chaînes de montagnes", "relief"],
+            q9: ["aléa", "enjeu"],
+            q10: ["éloignent", "s'éloignent", "écartent"]
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = 10;
+
+            // Question 1
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const feedback1 = document.getElementById('feedback-q1');
+            if (q1) {
+                if (q1.value === correctAnswers.q1) {
+                    feedback1.className = "feedback correct";
+                    feedback1.textContent = "✓ Correct ! La plaque est composée de lithosphère rigide.";
+                    score++;
+                } else {
+                    feedback1.className = "feedback incorrect";
+                    feedback1.textContent = "✗ Incorrect. Réessaie en relisant le début du chapitre 2.";
+                }
+            } else {
+                feedback1.className = "feedback incorrect";
+                feedback1.textContent = "⚠ Veuillez sélectionner une réponse.";
+            }
+
+            // Question 2
+            const q2 = document.getElementById('q2').value.toLowerCase().trim();
+            const feedback2 = document.getElementById("feedback-q2");
+            if (correctAnswers.q2.some(ans => q2.includes(ans))) {
+                feedback2.className = "feedback correct";
+                feedback2.textContent = "✓ Correct ! C'est bien l'asthénosphère.";
+                score++;
+            } else {
+                feedback2.className = "feedback incorrect";
+                feedback2.textContent = "✗ Incorrect. Relis la définition de l'asthénosphère dans le chapitre 2.";
+            }
+
+            // Question 3
+            const q3 = document.getElementById('q3').value.toLowerCase().trim();
+            const feedback3 = document.getElementById("feedback-q3");
+            if (correctAnswers.q3.some(ans => q3.includes(ans))) {
+                feedback3.className = "feedback correct";
+                feedback3.textContent = "✓ Correct ! Les ondes ralentissent dans l'asthénosphère.";
+                score++;
+            } else {
+                feedback3.className = "feedback incorrect";
+                feedback3.textContent = "✗ Incorrect. Pense au contraste VITE / ... du chapitre 2.";
+            }
+
+            // Question 4
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const feedback4 = document.getElementById("feedback-q4");
+            if (q4) {
+                if (q4.value === correctAnswers.q4) {
+                    feedback4.className = "feedback correct";
+                    feedback4.textContent = "✓ Correct ! La chaleur vient de la radioactivité des roches.";
+                    score++;
+                } else {
+                    feedback4.className = "feedback incorrect";
+                    feedback4.textContent = "✗ Incorrect. Revois le chapitre 3 : Le moteur des plaques.";
+                }
+            } else {
+                feedback4.className = "feedback incorrect";
+                feedback4.textContent = "⚠ Veuillez sélectionner une réponse.";
+            }
+
+            // Question 5
+            const q5 = document.getElementById('q5').value.toLowerCase().trim();
+            const feedback5 = document.getElementById("feedback-q5");
+            if (correctAnswers.q5.some(ans => q5.includes(ans))) {
+                feedback5.className = "feedback correct";
+                feedback5.textContent = "✓ Correct ! Les plaques s'écartent et l'océan s'agrandit.";
+                score++;
+            } else {
+                feedback5.className = "feedback incorrect";
+                feedback5.textContent = "✗ Incorrect. Relis le scénario A (Divergence) du chapitre 4.";
+            }
+
+            // Question 6
+            const q6 = document.querySelector('input[name="q6"]:checked');
+            const feedback6 = document.getElementById("feedback-q6");
+            if (q6) {
+                if (q6.value === correctAnswers.q6) {
+                    feedback6.className = "feedback correct";
+                    feedback6.textContent = "✓ Correct ! La subduction est l'enfouissement d'une plaque sous une autre.";
+                    score++;
+                } else {
+                    feedback6.className = "feedback incorrect";
+                    feedback6.textContent = "✗ Incorrect. Revois la définition de la subduction (chapitre 4).";
+                }
+            } else {
+                feedback6.className = "feedback incorrect";
+                feedback6.textContent = "⚠ Veuillez sélectionner une réponse.";
+            }
+
+            // Question 7
+            const q7 = document.getElementById('q7').value.toLowerCase().trim();
+            const feedback7 = document.getElementById("feedback-q7");
+            if (correctAnswers.q7.some(ans => q7.includes(ans))) {
+                feedback7.className = "feedback correct";
+                feedback7.textContent = "✓ Correct ! Les foyers sont alignés selon un plan oblique.";
+                score++;
+            } else {
+                feedback7.className = "feedback incorrect";
+                feedback7.textContent = "✗ Incorrect. Relis la partie « Preuve visuelle » de la subduction.";
+            }
+
+            // Question 8
+            const q8 = document.getElementById('q8').value.toLowerCase().trim();
+            const feedback8 = document.getElementById("feedback-q8");
+            if (correctAnswers.q8.some(ans => q8.includes(ans))) {
+                feedback8.className = "feedback correct";
+                feedback8.textContent = "✓ Correct ! Cela forme des chaînes de montagnes.";
+                score++;
+            } else {
+                feedback8.className = "feedback incorrect";
+                feedback8.textContent = "✗ Incorrect. Revois la partie sur la collision continentale.";
+            }
+
+            // Question 9
+            const q9 = document.getElementById('q9').value.toLowerCase().trim();
+            const feedback9 = document.getElementById("feedback-q9");
+            if (correctAnswers.q9.every(ans => q9.includes(ans))) {
+                feedback9.className = "feedback correct";
+                feedback9.textContent = "✓ Correct ! Risque = Aléa × Enjeu.";
+                score++;
+            } else {
+                feedback9.className = "feedback incorrect";
+                feedback9.textContent = "✗ Incorrect. Relis la formule du risque dans le chapitre 5.";
+            }
+
+            // Question 10
+            const q10 = document.getElementById('q10').value.toLowerCase().trim();
+            const feedback10 = document.getElementById("feedback-q10");
+            if (correctAnswers.q10.some(ans => q10.includes(ans))) {
+                feedback10.className = "feedback correct";
+                feedback10.textContent = "✓ Correct ! Montréal et La Rochelle s'éloignent de 2,4 cm/an.";
+                score++;
+            } else {
+                feedback10.className = "feedback incorrect";
+                feedback10.textContent = "✗ Incorrect. Revois les exemples GPS donnés au chapitre 1.";
+            }
+
+            // Afficher le score
+            const scoreDisplay = document.getElementById("scoreDisplay");
+            scoreDisplay.style.display = "block";
+
+            let emoji = '';
+            let message = '';
+
+            if (score === 10) {
+                emoji = '🥇';
+                message = 'Expert Tectonique ! Prêt pour le 20/20 !';
+            } else if (score >= 7) {
+                emoji = '🥈';
+                message = 'Géologue Confirmé ! Relire juste les erreurs.';
+            } else {
+                emoji = '🥉';
+                message = 'Apprenti. Il faut relire le "Manuel de l'Expert" une fois de plus.';
+            }
+
+            scoreDisplay.innerHTML = emoji + "<br>Score : " + score + "/10<br>" + message;
+
+            // Scroll vers le score
+            scoreDisplay.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    </script>
+</body>
+</html>
